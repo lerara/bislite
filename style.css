@@ -1,7 +1,8 @@
 body {
 	font-family: arial;
-	margin: 0;
+	margin: 0 auto;
 	background-color: #e8ebf1;
+	box-sizing: border-box;
 }
 	.Bwrappers {
 		max-width: 1000px;
@@ -27,16 +28,15 @@ body {
 			margin-left: 10px; 
 			font-weight: 700;
 			line-height: 20px;
+			border-top: 3px solid transparent;
 		}
-			.nav li a {
+			ul.nav > li a {
 				display: block;
 				color: black;
 				text-decoration: none;
-				padding: 20px 10px;
+				padding: 15px 10px;
 			}
-			.nav li a:hover {
-				padding-top: 5px;
-				padding-bottom: 5px;
+			.nav >li:hover {
 				border-top: 3px solid #2aacc8;
 				color: #2aacc8;
 				background-color: white;
@@ -47,10 +47,10 @@ body {
 
 		ul.subnav {
 			display: none;
+			padding: 20px 0;
 		    position: absolute;
 		    width: 200px;
 		    top: 30px;
-		    left: inherit;
 		    font-size: 13px;
 		    font-weight: 700;
 			line-height: 20px;
@@ -59,11 +59,10 @@ body {
 
 					ul.subnav > li {
 					    display: block;
-					    border-bottom: 1px solid lightgray;
 					}
 
 					ul.subnav > li .smiley {
-					    border-radius: 1em;
+						border-radius: 1em;
 					-webkit-box-shadow: 0 0 0 .4em #2C2C2C, inset 0 0 0 .1em #2C2C2C;
 					box-shadow: 0 0 0 .4em #2C2C2C, inset 0 0 0 .1em #2C2C2C;
 					height: 2em;
@@ -95,17 +94,27 @@ body {
 					    right: 0;
 					}
 
-					}
 					ul.subnav > li > a {
 					    display: block;
-					    padding: 10px;
+					    margin-right: 10px;
 					    text-decoration: none;
+						border-bottom: 1px solid lightgray;
+						padding: 5px;
+						text-decoration: none;
+						color: #000;
+						font: 400 13px 'arial mt', sans-serif;
+						line-height: 26px;
+					}
+
++					ul.subnav li:last-child a {
++						border: none;
 					    
 					}
+
 					ul.subnav > li > a:hover {
 					    border-top: none;
 					    color:  #2aacc8;
-					    padding: 10px;
+					    padding: 5px;
 					}
 
 						ul.nav > li:hover > ul.subnav {
@@ -113,11 +122,12 @@ body {
 						  	z-index: 1;
 						  	border-bottom: 3px solid #2aacc8;
 						}
+
 		.downarrow:after {
 			content: "\25be";
 			display: inline;
 			clear: both;
-			outline-width: 700;
+			outline-width: 700px;
 			padding-left: 10px;
 			padding-bottom: 20px;
 		} 
@@ -126,7 +136,7 @@ body {
 		margin-top: 40px;
 		font-size: 50px;
 		line-height: 20px;
-		font-family: Lato;
+		font-family: Lato sans-serif;
 		font-weight: 900;
 		color: black;
 	}
@@ -172,16 +182,17 @@ span {
 
 			.next {
 				padding: 30px;
+				display: flex;
+				justify-content: space-between;
 			}
 
 			.next > div  {
-				display: inline-block;
-				width: 23%;
-				margin: 5px;
-				vertical-align: top;
+				width: 25%;
+				margin: 20px;
 			}
 
 			.next h6 {
+				margin: 0;
 				font-size: 15px;
 				font-weight: 700;
 				line-height: 20px;
@@ -197,7 +208,7 @@ span {
 				border-radius: 50%;
 				background-position: center;
 				margin-right: 5%;
-				vertical-align: top;
+				vertical-align: middle;
 				margin-bottom: 5%;
 			}
 
@@ -226,13 +237,13 @@ span {
 			font-weight: 400;
 			line-height: 20px;
 			color: #363636;
-			padding-bottom: 20px;
 			height: 120px;
 			overflow: hidden;
 		}
 
 		.next a {
 			color: #2aacc8;
+			text-decoration: none;
 		}
 
 		.next a:before {
@@ -253,17 +264,18 @@ span {
 		max-width: 1000px;
 		margin: 0 auto;
 		position: relative;
-		padding: 15px 0;
+		padding: 15px 0 0;
 	}
 
 		.latest ul {
 			float: right;
+			margin: 0;
 		}
 
 			.latest li {
 			display: inline-block;
-			height: 15px;
-			width: 15px;
+			height: 20px;
+			width: 20px;
 			background-color: #2aacc8;
 			border-radius: 50%;
 			font-weight: 700;
@@ -286,7 +298,8 @@ span {
 			}
 
 		.pic {
-			text-align: center;
+			display: flex;
+			justify-content: space-between;
 		}
 
 		.gallery {
@@ -304,7 +317,9 @@ span {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		display: none;
+		display: flex;
+		justify-content: center;
+		visibility: hidden;
 	}
 
 	.gallery:hover .other {
@@ -312,7 +327,7 @@ span {
 		height: 50%;
 	}
 	.other a {
-		vertical-align: middle;
+		margin: 17px;
 	}
 	
 		.other a:before {
@@ -335,6 +350,7 @@ span {
 			}
 
 hr {
+	text-align: center;
 	color: lightgray;
 	max-width: 1000px;
 	margin-bottom: 10px;
@@ -380,7 +396,6 @@ hr {
 			font-weight: 400;
 			line-height: 24px;
 			color: #363636;
-			padding: 25px 25px 0 0;
 		}
 			.person p:last-child {
 				font-weight: 700;
@@ -392,35 +407,32 @@ hr {
 		}
 
 	.download {
+		display: flex;
+		justify-content: space-between;
 		max-width: 1000px;
-		height: 140px;
 		background-color: #e8fcfe;
 		border: 1px solid #81e4ed;
 		margin: 0 auto;
+		padding: 35px;
+		box-sizing: border-box;
 	}
 		.download p {
-			width: 607px;
-			height: 68px;
+			width: 60%;
 			color: #363636;
 			font-size: 16px;
 			font-weight: 400;
 			line-height: 26px;
-			display: inline-block;
-			padding: 30px;
+			margin: 0;
 
 		}
 
 		.download b {
-			display: inline-block;
 			color: #0d0707;
 			font-weight: 700;
-			line-height: 60px;
 			text-transform: uppercase;
 			text-align: center;
-			padding: 0px;
-			width: 240px;
-			height: 60px;
-			vertical-align: middle;
+			align-self: center;
+			padding: 15px;
 			background-color: #2aacc8;
 			background-image: linear-gradient(to top, #2aacc8 0%, #2aacc8 0%, #60cede 15%, #72dae6 50%, #81e4ed 100%);
 			border: 1px solid #2aacc8;
@@ -443,6 +455,7 @@ hr {
 			font-size: 18px;
 			font-weight: 700;
 			text-transform: uppercase;
+			text-decoration: none;
 		}
 
 footer {
@@ -491,6 +504,11 @@ footer {
 		margin-top: 25px;
 	}
 
+	footer > div > ul {
+		list-style: none;
+		padding: 0;
+	}
+
 	footer > div > ul > li > a {
 		line-height: 26px;
 		text-decoration: none;
@@ -500,6 +518,7 @@ footer {
 	}
 
 	footer > div > a {
+		margin: 5px;
 		font-size: 70px;
 		line-height: 0.8;
 	}
@@ -509,6 +528,7 @@ footer {
 }
 
 	.finish p {
+		margin: 0;
 		color: #363636;
 		width: 80%;
 		font-size: 14px;
@@ -520,6 +540,7 @@ footer {
 
 	.finish a {
 		color: #363636;
+		text-decoration: none;
 	}
 
 	.finish:after {
